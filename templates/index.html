@@ -42,6 +42,13 @@ Jon Snow,14,15,18,14,7
 Tyrion Lannister,8,19,7,5,10
 Eddard Stark,12,13,17,12,0</textarea>
 <p>
+name: <input type="text" name="name" id="name" class="form-control" value="Jon Doe" min="200" max="2000" step="" required="required" title="">
+strength: <input type="number" name="strength" id="strength" class="form-control" value="5" min="200" max="2000" step="" required="required" title="">
+intelligence: <input type="number" name="intelligence" id="intelligence" class="form-control" value="4" min="200" max="2000" step="" required="required" title="">
+charisma: <input type="number" name="charisma" id="charisma" class="form-control" value="4" min="200" max="2000" step="" required="required" title="">
+dexterity: <input type="number" name="dexterity" id="dexterity" class="form-control" value="7" min="200" max="2000" step="" required="required" title="">
+luck: <input type="number" name="luck" id="luck" class="form-control" value="8" min="200" max="2000" step="" required="required" title="">
+<br/>
 Width: <input type="number" name="w" id="w" class="form-control" value="600" min="200" max="2000" step="" required="required" title="">
 Height: <input type="number" name="h" id="h" class="form-control" value="600" min="200" max="2000" step="" required="required" title="">
 </p>
@@ -54,15 +61,34 @@ Height: <input type="number" name="h" id="h" class="form-control" value="600" mi
     var data = [];
     var chart = RadarChart.chart();
   
+  var nameInput = document.getElementById("name");
+  var strengthInput = document.getElementById("strength");
+  var intelligenceInput = document.getElementById("intelligence");
+  var charismaInput = document.getElementById("charisma");
+  var dexterityInput = document.getElementById("dexterity");
+  var luckInput = document.getElementById("luck");
+
   var wInput = document.getElementById("w");
   var hInput = document.getElementById("h");
+  var dataInput = document.getElementById("data");
 
-  wInput.value = {{a[0]}};
-  hInput.value = {{a[1]}};
-
+  wInput.value = {{a[0]}} || 600;
+  hInput.value = {{a[1]}} || 600;
+  
+  
   var c = document.getElementById("data").value,
       w = document.getElementById("w").value,
-      h = document.getElementById("h").value,
+      h = document.getElementById("h").value;
+  var columns = 'name,strength,intelligence,charisma,dexterity,luck\n';
+  
+  c = dataInput.value = columns + [
+    nameInput.value,
+    strengthInput.value,
+    intelligenceInput.value,
+    charismaInput.value,
+    dexterityInput.value,
+    luckInput.value,
+  ].join(",");
 
   csv = c.split("\n").map(function(i){return i.split(",")})
   headers = []
