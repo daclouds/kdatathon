@@ -54,9 +54,16 @@ Height: <input type="number" name="h" id="h" class="form-control" value="600" mi
     var data = [];
     var chart = RadarChart.chart();
   
+  var wInput = document.getElementById("w");
+  var hInput = document.getElementById("h");
+
+  wInput.value = {{a[0]}};
+  hInput.value = {{a[1]}};
+
   var c = document.getElementById("data").value,
       w = document.getElementById("w").value,
       h = document.getElementById("h").value,
+
   csv = c.split("\n").map(function(i){return i.split(",")})
   headers = []
   csv.forEach(function(item, i){
@@ -80,20 +87,20 @@ RadarChart.defaultConfig.w = w;
 RadarChart.defaultConfig.h = h;
 RadarChart.draw("#chart-container", data);
 function animate(elem,time) {
-    if( !elem) return;
-    var to = elem.offsetTop;
-    var from = window.scrollY;
-    var start = new Date().getTime(),
-        timer = setInterval(function() {
-            var step = Math.min(1,(new Date().getTime()-start)/time);
-            window.scrollTo(0,(from+step*(to-from))+1);
-            if( step == 1){ clearInterval(timer);};
-        },25);
-        window.scrollTo(0,(from+1));
-    }
+  if( !elem) return;
+  var to = elem.offsetTop;
+  var from = window.scrollY;
+  var start = new Date().getTime(),
+      timer = setInterval(function() {
+          var step = Math.min(1,(new Date().getTime()-start)/time);
+          window.scrollTo(0,(from+step*(to-from))+1);
+          if( step == 1){ clearInterval(timer);};
+      },25);
+      window.scrollTo(0,(from+1));
+  }
 
-var divVal = document.getElementById('chart-container');
-animate(divVal,600);
+  var divVal = document.getElementById('chart-container');
+  animate(divVal,600);
 }
 </script>
 
