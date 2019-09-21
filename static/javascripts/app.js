@@ -1,4 +1,9 @@
 function showRadar(){
+  axios.get('/hello?name=Joe').then(function (response) {
+    // handle success
+    console.log(response);
+  });
+
   var data = [];
   var chart = RadarChart.chart();
 
