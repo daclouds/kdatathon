@@ -28,17 +28,18 @@
     </style>
     <script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
     <script type="text/javascript" src="javascripts/radar-chart.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
   </head>
   <body>
     <!-- <h1>Radar Chart from CSV file</h1>
     <p>Include data in CSV format. The <strong>first row are the headers</strong> and the <strong>first column is the class names.</strong></p> -->
 
-    <textarea id="data" cols="60" rows="15">name,strength,intelligence,charisma,dexterity,luck
+    <!-- <textarea id="data" cols="60" rows="15">name,strength,intelligence,charisma,dexterity,luck
     Hodor,19,2,4,4,7
     Jon Snow,14,15,18,14,7
     Tyrion Lannister,8,19,7,5,10
-    Eddard Stark,12,13,17,12,0</textarea>
+    Eddard Stark,12,13,17,12,0</textarea> -->
     <p>
       name: <input type="text" name="name" id="name" class="form-control" value="Jon Doe" min="200" max="2000" step="" required="required" title="">
       strength: <input type="number" name="strength" id="strength" class="form-control" value="5" min="200" max="2000" step="" required="required" title="">

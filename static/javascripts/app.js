@@ -10,7 +10,7 @@ function showRadar(){
 
   var wInput = document.getElementById("w");
   var hInput = document.getElementById("h");
-  var dataInput = document.getElementById("data");
+  // var dataInput = document.getElementById("data");
 
   // var c = document.getElementById("data").value,
   c = columns + [
@@ -42,7 +42,7 @@ function drawGraph(response) {
   w = document.getElementById("w").value;
   h = document.getElementById("h").value;
 
-  var c = columns + response.data.join(",");
+  var c = columns + _.values(response.data).join(",");
 
   csv = c.split("\n").map(function(i){return i.split(",")})
   headers = []
