@@ -1,0 +1,3 @@
+person_id,visit_duration,visit_cnt,gender,is_condition,is_drug1,under_cr_max,under_gfr_min,alt_max,ast_max,alp_max,bil_max,a1c_max,afb,culture,hbv,hcv,d1_cnt,d1_duration,d2_cnt,d2_duration,is_aids,death,age,period,failure
+0,241164,1,4,1,0,1,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,1.0,90.0,0.0,0.0,0.0,0,8.0,86,0
+1,19642,1,2,1,0,1,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,1.0,90.0,0.0,0.0,0.0,1,3.0,92,0
