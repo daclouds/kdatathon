@@ -31,8 +31,8 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <h1>Radar Chart from CSV file</h1>
-    <p>Include data in CSV format. The <strong>first row are the headers</strong> and the <strong>first column is the class names.</strong></p>
+    <!-- <h1>Radar Chart from CSV file</h1>
+    <p>Include data in CSV format. The <strong>first row are the headers</strong> and the <strong>first column is the class names.</strong></p> -->
 
     <textarea id="data" cols="60" rows="15">name,strength,intelligence,charisma,dexterity,luck
     Hodor,19,2,4,4,7
@@ -51,7 +51,7 @@
       Height: <input type="number" name="h" id="h" class="form-control" value="600" min="200" max="2000" step="" required="required" title="">
     </p>
     <p>
-      <button onclick='showRadar()' class="btn btn-default" style="width:200px;height:50px;">Draw!</button>
+      <button onclick='showRadar()' class="btn btn-default" style="width:200px;height:50px;">Find!</button>
     </p>
     <script type="text/javascript" src="javascripts/app.js"></script>
     <div id="chart-container"></div>

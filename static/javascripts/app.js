@@ -1,12 +1,6 @@
+var columns = 'name,strength,intelligence,charisma,dexterity,luck\n';
+
 function showRadar(){
-  axios.get('/hello?name=Joe').then(function (response) {
-    // handle success
-    console.log(response);
-  });
-
-  var data = [];
-  var chart = RadarChart.chart();
-
   var nameInput = document.getElementById("name");
   var strengthInput = document.getElementById("strength");
   var intelligenceInput = document.getElementById("intelligence");
@@ -18,12 +12,8 @@ function showRadar(){
   var hInput = document.getElementById("h");
   var dataInput = document.getElementById("data");
 
-  var c = document.getElementById("data").value,
-      w = document.getElementById("w").value,
-      h = document.getElementById("h").value;
-  var columns = 'name,strength,intelligence,charisma,dexterity,luck\n';
-
-  c = dataInput.value = columns + [
+  // var c = document.getElementById("data").value,
+  c = columns + [
     nameInput.value,
     strengthInput.value,
     intelligenceInput.value,
@@ -31,6 +21,28 @@ function showRadar(){
     dexterityInput.value,
     luckInput.value,
   ].join(",");
+
+  axios.post('/hello', {
+    name: nameInput.value,
+    strength: strengthInput.value,
+    intelligence: intelligenceInput.value,
+    charisma: charismaInput.value,
+    dexterity: dexterityInput.value,
+    luck: luckInput.value,
+  }).then(function (response) {
+    console.log(response);
+    drawGraph(response);
+  });
+}
+
+function drawGraph(response) {
+  var data = [];
+  var chart = RadarChart.chart();
+
+  w = document.getElementById("w").value;
+  h = document.getElementById("h").value;
+
+  var c = columns + response.data.join(",");
 
   csv = c.split("\n").map(function(i){return i.split(",")})
   headers = []

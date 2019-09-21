@@ -1,16 +1,17 @@
-from flask import Flask, escape, request, render_template
+from flask import Flask, escape, request, render_template, jsonify
 
 app = Flask(__name__, static_url_path='')
 
-@app.route('/hello')
+@app.route('/hello', methods=['POST'])
 def hello():
-  name = request.args.get("name", "World")
-  return 'Hello, ' + name
+  if request.method == 'POST':
+    ret = analysis(request.json)
+    return jsonify(ret)
+  return jsonify([])
 
 @app.route('/')
 def root():
-  # w = request.args.get('w', type = int)
-  # h = request.args.get('h', type = int)
-  # print(w, h)
-  # a = [w, h]
   return render_template("index.html")
+
+def analysis(params):
+  return ['Jon Doe', 14, 15, 18, 14, 7]
