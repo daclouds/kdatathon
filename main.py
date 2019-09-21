@@ -5,10 +5,10 @@ app = Flask(__name__, static_url_path='')
 @app.route('/hello', methods=['POST'])
 def hello():
   if request.method == 'POST':
-    analysis(request.json)
+    ret = analysis(request.json)
     # ret = request.json
     # print (ret)
-    return jsonify(['Jon Doe', 14, 15, 18, 14, 7])
+    return jsonify(ret)
   return jsonify([])
 
 @app.route('/')
