@@ -1,0 +1,12 @@
+from flask import Flask, escape, request, render_template
+
+app = Flask(__name__, static_url_path='')
+
+@app.route('/hello')
+def hello():
+    name = request.args.get("name", "World")
+    return 'Hello, {escape(name)}!'
+
+@app.route('/')
+def root():
+    return render_template("index.html")
