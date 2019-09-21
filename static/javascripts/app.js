@@ -21,28 +21,29 @@ function showRadar(){
     dexterityInput.value,
     luckInput.value,
   ].join(",");
-
-  axios.post('/hello', {
+  const params = {
     name: nameInput.value,
     strength: strengthInput.value,
     intelligence: intelligenceInput.value,
     charisma: charismaInput.value,
     dexterity: dexterityInput.value,
     luck: luckInput.value,
-  }).then(function (response) {
+  };
+  axios.post('/hello', params).then(function (response) {
     console.log(response);
-    drawGraph(response);
+    drawGraph(_.values(_.map(params, (n) => isNaN(n) ? n : parseInt(n, 10))));
   });
 }
 
 function drawGraph(response) {
+  console.log(response);
   var data = [];
   var chart = RadarChart.chart();
 
   w = document.getElementById("w").value;
   h = document.getElementById("h").value;
 
-  var c = columns + _.values(response.data).join(",");
+  var c = columns + _.values(response).join(",");
 
   csv = c.split("\n").map(function(i){return i.split(",")})
   headers = []
