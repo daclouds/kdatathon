@@ -21,18 +21,24 @@
       Tyrion Lannister,8,19,7,5,10
       Eddard Stark,12,13,17,12,0</textarea> -->
       <div class="form">
-          name: <input type="text" name="name" id="name" class="form-control" value="Jon Doe" min="200" max="2000" step="" required="required" title="">
-          strength: <input type="number" name="strength" id="strength" class="form-control" value="5" min="200" max="2000" step="" required="required" title="">
-          intelligence: <input type="number" name="intelligence" id="intelligence" class="form-control" value="4" min="200" max="2000" step="" required="required" title="">
-          charisma: <input type="number" name="charisma" id="charisma" class="form-control" value="4" min="200" max="2000" step="" required="required" title="">
-          dexterity: <input type="number" name="dexterity" id="dexterity" class="form-control" value="7" min="200" max="2000" step="" required="required" title="">
-          luck: <input type="number" name="luck" id="luck" class="form-control" value="8" min="200" max="2000" step="" required="required" title="">
+          gender: <input type="number" name="gender" id="gender" class="form-control" value="1" required="required" title="">
+          under_gfr_min: <input type="number" name="under_gfr_min" id="under_gfr_min" class="form-control" value="0" required="required" title="">
+          under_cr_max: <input type="number" name="under_cr_max" id="under_cr_max" class="form-control" value="1" step="" required="required" title="">
+          alt_max: <input type="number" name="alt_max" id="alt_max" class="form-control" value="1" required="required" title="">
+          ast_max: <input type="number" name="ast_max" id="ast_max" class="form-control" value="0" required="required" title="">
+          a1c_max: <input type="number" name="a1c_max" id="a1c_max" class="form-control" value="0" required="required" title="">
+          alp_max: <input type="number" name="alp_max" id="alp_max" class="form-control" value="1" required="required" title="">
+          bil_max: <input type="number" name="bil_max" id="bil_max" class="form-control" value="1" required="required" title="">
+          d1_cnt: <input type="number" name="d1_cnt" id="d1_cnt" class="form-control" value="3" required="required" title="">
+          hbv: <input type="number" name="hbv" id="hbv" class="form-control" value="0" required="required" title="">
+          age: <input type="number" name="age" id="age" class="form-control" value="40" required="required" title="">
           <br/>
-          Width: <input type="number" name="w" id="w" class="form-control" value="600" min="200" max="2000" step="" required="required" title="">
-          Height: <input type="number" name="h" id="h" class="form-control" value="600" min="200" max="2000" step="" required="required" title="">
+          Width: <input type="number" name="w" id="w" class="form-control" value="600" required="required" title="">
+          Height: <input type="number" name="h" id="h" class="form-control" value="600" required="required" title="">
           <button onclick='showRadar()' class="btn btn-default" style="width:200px;height:50px;">Find!</button>
       </div>
       <div id="chart-container"></div>
+      <div id="result"></div>
     </div>
     <script type="text/javascript" src="javascripts/app.js"></script>
     <script type="text/javascript">
